@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="icon" type="image/svg+xml" href="/html-css_86_watchmakers/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Watchmakers</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Epilogue:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css"
+      integrity="sha512-wpPYUAdjBVSE4KJnH1VR1HeZfpl1ub8YT/NKx4PuQ5NmX2tKuGu6U/JRp5y+Y8XG2tV+wKQpNHVUX03MfMFn9Q=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Swiper підключення -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+
+    
+    <script type="module" crossorigin src="/html-css_86_watchmakers/assets/index-9e7e905a.js"></script>
+    <link rel="stylesheet" href="/html-css_86_watchmakers/assets/index-91faecbb.css">
+  </head>
+  <body>
+        <header class="page-header">
+        <div class="page-header-container container">
+            <nav class="page-nav">
+                <a class="header-logo-link link" href="./index.html">
+                    <img class="header-logo-image" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAATCAYAAAByUDbMAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAE1SURBVHgBnZRPioMwFMYfcwIX7nXvJTzCHMEbTOcE0xu0O5fODXoAQVF0PYLg1gE3gkhAXKnkNWmVQpto7A8ehPz58r33QgBWQESNxYkFmeMH3oEdNFmU+MoX7EUihLNDbY/QCdc5qArZuM2fipCsTs9QfumWmIfiGi0CN4ZhoHVdh2tCjsQFTzvkg3EcsWkamuc5+r5PPc+zldOrqgpd1z0yEZsQQouiwK7rJHfOTWGDi2g1TVNMkoTwPVEUlXEcy4QufM8H3h/h57Pbvu9B13WwLEubpsnJsuzXMAxRhf5ZfL/MshqYQRAgS4e2bYtMZCl6iPIn44AM3iXeLcEhIpjzYA2BAyo2dGuYCVvMaclEFmxQgW08bAidQRW8/2NE4q6EvUjclUp1kgge8fHLnnHjH7sCYgbW0XofirkAAAAASUVORK5CYII=" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAYAAACoPemuAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMySURBVHgBzZhLTuNAEIarYSSEYGFFPHcOFyGcYIYTBE4AN4gRG3YTTjCDWLBEcwKOwB4BjgTiDTHijaKuqUrbE8dj4uokDnxSqdt2p+vv7upXAHoEER2yCtkeWR0NnF+Cz4Kcl2Ni0vgJg4adoozBiROK0rH8POQNOVlBGTombg/yhBy42Dmm0oRF4ko2vobADm65IyiHZCrx/APyAM2SIEWnvOOeljTKSpSL3aET5kl9KkkhqtCnxIXeCciKSqkgq2BmjKFZh1zoDgwtyvNQfode4ZmE9uiMYe1t6UATVz52J0qnvdfE6+srXl9fl7L8dxrKCsiHcDlMOWYxloZtRPX+/g739/dAotgqWRWmBj+ak8EvkPGbgnk5HKJS8mOj0YDn52d8fHxUDw8PQCk8PT3h3d1dYXFx8cNJ8C1FlAumt0ScnJz8CbNrcWEs6OXlpSmERYUpWyRylYp5IIWE7aKQWq2GGxsbe7Hf+iSIHeP5+TkeHh7qo6MjtMAPzRlKiFoBi61jf38fpqen53d2dkr8TIK2bm9v4erqCsng8vJSFQoFsMAl2+J1bigmil960hrIKVBA4+TkpJqammo25ubmpkrvg4uLC8XfqU5wHKtdqEaiPM7Ee0y6QZsaaBgnJiYUCYOZmZmy7/tOsVgMaAg3ubfY5ubmwAKeCAvRQ1MYtcxmaWhOe4J7CkJzSByHAZydnXGvwcjICMzOzoIFa9RbtX9PaC4TUdCJOD4+ZtMkgANdc8Bj7PSwvr6+y2Us2E2q7LiJb29ve2NjYxUyGB8fhzDFKD86OqqGh4fjP1mlVm+iORRKt54a2UJbb0HGJk4CqhRDdY4jNhqyZrDTTFP0LSmKiWZ0GeSsJUWJODg4qJ6enmIQBJpnIW13yWGIH585LaMc6e7yP7zhvr29RYJ0hqOs73F8NEtU96C5WfebEvQKtp/L0o40Gu16q5rlU3S0DsX163jNq3sxq5DN9W0r8Ywf5LNYgH6CZiGuJ4bPFg/yANvvlrbifMgLNPeA5F1RAve0C3mCraXDprdWIW+wtXRIhVVhULCzLydKKI5jagk+C3aOrZirh3kP+/Cvzl+hjR9x9ph1OgAAAABJRU5ErkJggg== 2x" alt="logo" >
+                    <p class="header-logo-name">thewatchspot</p>
+                </a>
+                <ul class="header-menu list">
+                    <li class="header-menu-item"><a class="header-menu-link link" href="#about_us">About us</a></li>
+                    <li class="header-menu-item"><a class="header-menu-link link" href="#catalog">Catalog</a></li>
+                    <li class="header-menu-item"><a class="header-menu-link link" href="#sale">sale</a></li>
+                </ul>
+                <button type="button" class="header-mobile-menu-open" data-menu-open>
+                    <svg class="header-mobile-menu-icon" width="24" height="24">
+                        <use href="/html-css_86_watchmakers/assets/icons-bb8b8ce1.svg#burger"></use>
+                    </svg>
+                </button>
+            </nav>
+            <address class="header-address">
+                <a class="header-contact link" href="tel:+380684439426">+380 (68) 443-94-26</a>
+            </address>
+        </div>
+        <div class="header-mobile-menu" data-menu>
+            <div class="header-mobile-menu-container container">
+                <div class="header-modal-top-wrapper">
+                    <a class="header-logo-link link" href="./index.html">
+                        <img class="header-logo-image" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABMAAAATCAYAAAByUDbMAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAE1SURBVHgBnZRPioMwFMYfcwIX7nXvJTzCHMEbTOcE0xu0O5fODXoAQVF0PYLg1gE3gkhAXKnkNWmVQpto7A8ehPz58r33QgBWQESNxYkFmeMH3oEdNFmU+MoX7EUihLNDbY/QCdc5qArZuM2fipCsTs9QfumWmIfiGi0CN4ZhoHVdh2tCjsQFTzvkg3EcsWkamuc5+r5PPc+zldOrqgpd1z0yEZsQQouiwK7rJHfOTWGDi2g1TVNMkoTwPVEUlXEcy4QufM8H3h/h57Pbvu9B13WwLEubpsnJsuzXMAxRhf5ZfL/MshqYQRAgS4e2bYtMZCl6iPIn44AM3iXeLcEhIpjzYA2BAyo2dGuYCVvMaclEFmxQgW08bAidQRW8/2NE4q6EvUjclUp1kgge8fHLnnHjH7sCYgbW0XofirkAAAAASUVORK5CYII=" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACYAAAAmCAYAAACoPemuAAAACXBIWXMAABYlAAAWJQFJUiTwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAMySURBVHgBzZhLTuNAEIarYSSEYGFFPHcOFyGcYIYTBE4AN4gRG3YTTjCDWLBEcwKOwB4BjgTiDTHijaKuqUrbE8dj4uokDnxSqdt2p+vv7upXAHoEER2yCtkeWR0NnF+Cz4Kcl2Ni0vgJg4adoozBiROK0rH8POQNOVlBGTombg/yhBy42Dmm0oRF4ko2vobADm65IyiHZCrx/APyAM2SIEWnvOOeljTKSpSL3aET5kl9KkkhqtCnxIXeCciKSqkgq2BmjKFZh1zoDgwtyvNQfode4ZmE9uiMYe1t6UATVz52J0qnvdfE6+srXl9fl7L8dxrKCsiHcDlMOWYxloZtRPX+/g739/dAotgqWRWmBj+ak8EvkPGbgnk5HKJS8mOj0YDn52d8fHxUDw8PQCk8PT3h3d1dYXFx8cNJ8C1FlAumt0ScnJz8CbNrcWEs6OXlpSmERYUpWyRylYp5IIWE7aKQWq2GGxsbe7Hf+iSIHeP5+TkeHh7qo6MjtMAPzRlKiFoBi61jf38fpqen53d2dkr8TIK2bm9v4erqCsng8vJSFQoFsMAl2+J1bigmil960hrIKVBA4+TkpJqammo25ubmpkrvg4uLC8XfqU5wHKtdqEaiPM7Ee0y6QZsaaBgnJiYUCYOZmZmy7/tOsVgMaAg3ubfY5ubmwAKeCAvRQ1MYtcxmaWhOe4J7CkJzSByHAZydnXGvwcjICMzOzoIFa9RbtX9PaC4TUdCJOD4+ZtMkgANdc8Bj7PSwvr6+y2Us2E2q7LiJb29ve2NjYxUyGB8fhzDFKD86OqqGh4fjP1mlVm+iORRKt54a2UJbb0HGJk4CqhRDdY4jNhqyZrDTTFP0LSmKiWZ0GeSsJUWJODg4qJ6enmIQBJpnIW13yWGIH585LaMc6e7yP7zhvr29RYJ0hqOs73F8NEtU96C5WfebEvQKtp/L0o40Gu16q5rlU3S0DsX163jNq3sxq5DN9W0r8Ywf5LNYgH6CZiGuJ4bPFg/yANvvlrbifMgLNPeA5F1RAve0C3mCraXDprdWIW+wtXRIhVVhULCzLydKKI5jagk+C3aOrZirh3kP+/Cvzl+hjR9x9ph1OgAAAABJRU5ErkJggg== 2x" alt="logo" >
+                        <p class="header-logo-name">thewatchspot</p>
+                    </a>
+                    <button class="modal-close-btn" type="button" data-menu-close>
+                        <svg class="modal-close-btn-icon" width="12" height="12">
+                            <use href="/html-css_86_watchmakers/assets/icons-bb8b8ce1.svg#x"></use>
+                        </svg>
+                    </button>
+                </div>
+                <ul class="burger-menu list">
+                    <li class="burger-item"><a class="burger-link link" target="_blank" href="#about_us">About us</a></li>
+                    <li class="burger-item"><a class="burger-link link" target="_blank" href="#catalog">Catalog</a></li>
+                    <li class="burger-item"><a class="burger-link link" target="_blank" href="#sale">Sale</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <main>
+      <section class="hero">
+  <div class="container">
+    <div class="wrap-desktop-name">
+      <h1 class="hero-name">Welcome to our collection of premium watches</h1>
+      <div class="just-text-desktop">
+        <p class="hero-text no3">
+          Our watches are not just timepieces, but also an expression of your
+          personality and lifestyle. From classic designs to modern ones, we
+          have a watch to suit every taste and occasion.
+        </p>
+      </div>
+    </div>
+    <!-- Slider -->
+    <div class="wrap-bottom-desktop">
+      <div class="wrap768">
+        <div class="wrap-televozor no1">
+          <div class="televizor">
+            <div class="swiper mySwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide num1">
+                  <img
+                    class="slid-pic"
+                    src="/html-css_86_watchmakers/assets/hero-slider-5-a9641b44.png"
+                    srcset="/html-css_86_watchmakers/assets/hero-slider-5-2x-5601ff05.png 2x"
+                    alt="watch image 1"
+                  />
+                </div>
+                <div class="swiper-slide num2">
+                  <img
+                    class="slid-pic"
+                    src="/html-css_86_watchmakers/assets/hero-slider-1-66eb5b3d.png"
+                    srcset="/html-css_86_watchmakers/assets/hero-slider-1-2x-4ead5e87.png 2x"
+                    alt="watch image 2"
+                  />
+                </div>
+                <div class="swiper-slide num3">
+                  <img
+                    class="slid-pic"
+                    src="/html-css_86_watchmakers/assets/hero-slider-2-1400b4d1.png"
+                    srcset="/html-css_86_watchmakers/assets/hero-slider-2-2x-9cfe6557.png 2x"
+                    alt="watch image 3"
+                  />
+                </div>
+                <div class="swiper-slide num4">
+                  <img
+                    class="slid-pic"
+                    src="/html-css_86_watchmakers/assets/hero-slider-3-4931b99f.png"
+                    srcset="/html-css_86_watchmakers/assets/hero-slider-3-2x-8989eee7.png 2x"
+                    alt="watch image 4"
+                  />
+                </div>
+                <div class="swiper-slide num5">
+                  <img
+                    class="slid-pic"
+                    src="/html-css_86_watchmakers/assets/hero-slider-4-b1959202.png"
+                    srcset="/html-css_86_watchmakers/assets/hero-slider-4-2x-1dfa92a1.png 2x"
+                    alt="watch image 5"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-buttons">
+            <div class="btn-wrp">
+              <div class="button-prev">
+                <button class="hero-btn" type="button">
+                  <span class="left-btn">
+                    <svg class="btn-pic" width="10" height="20">
+                      <use href="/html-css_86_watchmakers/assets/icons-bb8b8ce1.svg#left-arrow"></use>
+                    </svg>
+                  </span>
+                </button>
+              </div>
+              <div class="button-next">
+                <button class="hero-btn" type="button">
+                  <span class="right-btn">
+                    <svg class="btn-pic" width="10" height="20">
+                      <use href="/html-css_86_watchmakers/assets/icons-bb8b8ce1.svg#right-arrow"></use>
+                    </svg>
+                  </span>
+                </button>
+              </div>
+            </div>
+            <div class="spw">
+              <div class="sviper-pagination">
+                <div class="box"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="wrap-televozor no2">
+          <div class="televizor">
+            <div class="swiper mySwiper1">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide num1">
+                  <img
+                    class="slid-pic"
+                    src="/html-css_86_watchmakers/assets/tablet-slider-1-62ab0663.png"
+                    srcset="/html-css_86_watchmakers/assets/tablet-slider-1-2x-885aeeec.png 2x"
+                    alt="watch image 1"
+                  />
+                </div>
+                <div class="swiper-slide num2">
+                  <img
+                    class="slid-pic"
+                    src="/html-css_86_watchmakers/assets/tablet-slider-2-36065434.png"
+                    srcset="/html-css_86_watchmakers/assets/tablet-slider-2-2x-9b56e20c.png 2x"
+                    alt="watch image 2"
+                  />
+                </div>
+                <div class="swiper-slide num3">
+                  <img
+                    class="slid-pic"
+                    src="/html-css_86_watchmakers/assets/tablet-slider-3-0942ef2c.png"
+                    srcset="/html-css_86_watchmakers/assets/tablet-slider-3-2x-deb7a5a2.png 2x"
+                    alt="watch image 3"
+                  />
+                </div>
+                <div class="swiper-slide num4">
+                  <img
+                    class="slid-pic"
+                    src="/html-css_86_watchmakers/assets/tablet-slider-4-9821ee1f.png"
+                    srcset="/html-css_86_watchmakers/assets/tablet-slider-4-2x-12f2d287.png 2x"
+                    alt="watch image 4"
+                  />
+                </div>
+                <div class="swiper-slide num5">
+                  <img
+                    class="slid-pic"
+                    src="/html-css_86_watchmakers/assets/tablet-slider-5-4ab265e8.png"
+                    srcset="/html-css_86_watchmakers/assets/tablet-slider-5-2x-4112c8c5.png 2x"
+                    alt="watch image 5"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-buttons">
+            <div class="btn-wrp">
+              <div class="button-prev1">
+                <button class="hero-btn" type="button">
+                  <span class="left-btn">
+                    <svg class="btn-pic" width="10" height="20">
+                      <use href="/html-css_86_watchmakers/assets/icons-bb8b8ce1.svg#left-arrow"></use>
+                    </svg>
+                  </span>
+                </button>
+              </div>
+              <div class="button-next1">
+                <button class="hero-btn" type="button">
+                  <span class="right-btn">
+                    <svg class="btn-pic" width="10" height="20">
+                      <use href="/html-css_86_watchmakers/assets/icons-bb8b8ce1.svg#right-arrow"></use>
+                    </svg>
+                  </span>
+                </button>
+              </div>
+            </div>
+            <div class="spw">
+              <div class="sviper-pagination1">
+                <div class="box"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="just-text">
+          <p class="hero-text no4">
+            Our watches are not just timepieces, but also an expression of your
+            personality and lifestyle. From classic designs to modern ones, we
+            have a watch to suit every taste and occasion.
+          </p>
+        </div>
+      </div>
+
+      <div class="bottom-pic no1">
+        <img
+          src="/html-css_86_watchmakers/assets/hero-pic-5373ee14.jpg"
+          srcset="/html-css_86_watchmakers/assets/hero-pic-2x-dc3c11d7.jpg 2x"
+          alt="watch on hand"
+        />
+      </div>
+      <div class="bottom-pic no2">
+        <img
+          class="tablet-boottom-pic"
+          src="/html-css_86_watchmakers/assets/tablet-boottom-pic-09a8810d.jpg"
+          srcset="/html-css_86_watchmakers/assets/tablet-boottom-pic-2x-c1b05385.jpg 2x"
+          alt="watch on hand"
+          width="704"
+          height="410"
+        />
+      </div>
+      <div class="bottom-pic no2">
+        <img
+          class="tablet-boottom-pic1"
+          src="/html-css_86_watchmakers/assets/desktop-hand-57564485.jpg"
+          srcset="/html-css_86_watchmakers/assets/desktop-hand-2x-f7ad6ce2.jpg 2x"
+          alt="watch on hand"
+          width="676"
+          height="394"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+      <!-- ========About Us Section================ -->
+<section class="section about-us-section project-margin">
+    <div class="container">
+        <div class="about-us-all-text-wrapper">
+            <h2 class="section-name" id="about_us" >About us</h2>
+            <div class="about-us-desc-wrapper">
+                <p class="about-us-desc about-us-desc-part-one">Welcome to our premium watch collection, where
+                    luxury
+                    and style meet
+                    functionality and precision. Our selection of
+                    timepieces embodies the very best in Swiss craftsmanship and engineering, ensuring that
+                    you'll
+                    always have a reliable
+                    and stylish accessory on your wrist.</p>
+                <p class="about-us-desc about-us-desc-part-two">At our premium watch collection, we believe that
+                    a
+                    watch
+                    is more than just a
+                    timekeeping device – it's a statement piece
+                    that reflects your personality and style. So why settle for anything less than the best?
+                    Browse
+                    our
+                    collection today and
+                    discover the perfect watch for you.</p>
+            </div>
+        </div>
+        <div class="pic-wrapper">
+            <img class="about-us-watches-pic" src="/html-css_86_watchmakers/assets/gif-aebc2176.gif"
+                alt="beautiful swiss made watches on the dark background">
+        </div>
+    </div>
+</section>
+      <section class="section catalog project-margin">
+<div class="container container-catalog">
+    <h2 class="secondary-title" id="catalog" >Catalog</h2>
+    <ul class="catalog-watches">
+        <li class="catalog-watches-item">
+            <div class="img-wrap">
+                <img class="img-watch-catalog" srcset="/html-css_86_watchmakers/assets/watch1-90f18f34.jpeg 1x, /html-css_86_watchmakers/assets/watch1-2x-c2e0aa55.jpeg 2x" src="/html-css_86_watchmakers/assets/watch1-90f18f34.jpeg" alt="watch s42" width="276" height="274">
+                <svg class="heart-icon" width="20" height="20">
+                    <use href="/html-css_86_watchmakers/assets/icons-bb8b8ce1.svg#heart"></use>
+                </svg>
+                <div class="img-text-wrap">
+                    <h3 class="cards-title">Description</h3>
+                    <p class="cards-text">Richly detailed with an understated design - the Police Men’s Greenlane watch.</p>
+                    <h3 class="cards-title">DETAILS & FEATUREStion</h3>
+                    <pre class="cards-text">Gender: man
+Size: 46x54.5mm
+Case Colour: Steel
+Band Material: Metal
+Case Material: Metal
+Features: Multifunction
+Water Resistant: 5 (ATM)
+Band Colour: Steel</pre>
+                </div>
+            </div>
+            <p class="description-watch">Tube Watch S42 Date Steel With Black Case</p>
+            <span class="price-watch">€395</span>
+        </li>
+        <li class="catalog-watches-item">
+            <div class="img-wrap">
+                <img class="img-watch-catalog" srcset="/html-css_86_watchmakers/assets/watch2-1c0f0654.jpeg 1x, /html-css_86_watchmakers/assets/watch2-2x-09e751e7.jpeg 2x" src="/html-css_86_watchmakers/assets/watch2-1c0f0654.jpeg" alt="watch Police" width="276" height="274">
+                <svg class="heart-icon" width="20" height="20">
+                    <use href="/html-css_86_watchmakers/assets/icons-bb8b8ce1.svg#heart"></use>
+                </svg>
+                <div class="img-text-wrap">
+                    <h3 class="cards-title">Description</h3>
+                    <p class="cards-text">Richly detailed with an understated design - the Police Men’s Greenlane watch.</p>
+                    <h3 class="cards-title">DETAILS & FEATUREStion</h3>
+                    <pre class="cards-text">Gender: man
+Size: 46x54.5mm
+Case Colour: Steel
+Band Material: Metal
+Case Material: Metal
+Features: Multifunction
+Water Resistant: 5 (ATM)
+Band Colour: Steel</pre>
+                </div>
+            </div>
+            <p class="description-watch">Avondale Watch Police For Men</p>
+            <span class="price-watch">€800</span>
+        </li>
+        <li class="catalog-watches-item">
+            <div class="img-wrap">
+                <img class="img-watch-catalog" srcset="/html-css_86_watchmakers/assets/watch3-0cb8e115.jpeg 1x, /html-css_86_watchmakers/assets/watch3-2x-b8e69153.jpeg 2x" src="/html-css_86_watchmakers/assets/watch3-0cb8e115.jpeg" alt="watch Chronometer" width="276" height="274">
+                <svg class="heart-icon" width="20" height="20">
+                    <use href="/html-css_86_watchmakers/assets/icons-bb8b8ce1.svg#heart"></use>
+                </svg>
+                <div class="img-text-wrap">
+                    <h3 class="cards-title">Description</h3>
+                    <p class="cards-text">Richly detailed with an understated design - the Police Men’s Greenlane watch.</p>
+                    <h3 class="cards-title">DETAILS & FEATUREStion</h3>
+                    <pre class="cards-text">Gender: man
+Size: 46x54.5mm
+Case Colour: Steel
+Band Material: Metal
+Case Material: Metal
+Features: Multifunction
+Water Resistant: 5 (ATM)
+Band Colour: Steel</pre>
+                </div>
+            </div>
+            <p class="description-watch">Diver  300M Co‑Axial Master Chronometer Chronograph</p>
+            <span class="price-watch">€600</span>
+        </li>
+        <li class="catalog-watches-item">
+            <div class="img-wrap">
+                <img class="img-watch-catalog" srcset="/html-css_86_watchmakers/assets/watch4-b2475290.jpeg 1x, /html-css_86_watchmakers/assets/watch4-2x-0b9fd6b3.jpeg 2x" src="/html-css_86_watchmakers/assets/watch4-b2475290.jpeg" alt="watch Chronometer" width="276" height="274">
+                <svg class="heart-icon" width="20" height="20">
+                    <use href="/html-css_86_watchmakers/assets/icons-bb8b8ce1.svg#heart"></use>
+                </svg>
+                <div class="img-text-wrap">
+                    <h3 class="cards-title">Description</h3>
+                    <p class="cards-text">Richly detailed with an understated design - the Police Men’s Greenlane watch.</p>
+                    <h3 class="cards-title">DETAILS & FEATUREStion</h3>
+                    <pre class="cards-text">Gender: man
+Size: 46x54.5mm
+Case Colour: Steel
+Band Material: Metal
+Case Material: Metal
+Features: Multifunction
+Water Resistant: 5 (ATM)
+Band Colour: Steel</pre>
+                </div>
+            </div>
+            <p class="description-watch">Diver 300M Co-Axial Master Chronometer </p>
+            <span class="price-watch">€1400</span>
+        </li>
+        <li class="catalog-watches-item">
+            <div class="img-wrap">
+                <img class="img-watch-catalog" srcset="/html-css_86_watchmakers/assets/watch5-cd609b44.jpeg 1x, /html-css_86_watchmakers/assets/watch5-2x-5749ab8f.jpeg 2x" src="/html-css_86_watchmakers/assets/watch5-cd609b44.jpeg" alt="watch Toman" width="276" height="274">
+                <svg class="heart-icon" width="20" height="20">
+                    <use href="/html-css_86_watchmakers/assets/icons-bb8b8ce1.svg#heart"></use>
+                </svg>
+                <div class="img-text-wrap">
+                    <h3 class="cards-title">Description</h3>
+                    <p class="cards-text">Richly detailed with an understated design - the Police Men’s Greenlane watch.</p>
+                    <h3 class="cards-title">DETAILS & FEATUREStion</h3>
+                    <pre class="cards-text">Gender: man
+Size: 46x54.5mm
+Case Colour: Steel
+Band Material: Metal
+Case Material: Metal
+Features: Multifunction
+Water Resistant: 5 (ATM)
+Band Colour: Steel</pre>
+                </div>    
+            </div>
+            <p class="description-watch">Taman Watch By Police For Men</p>
+            <span class="price-watch">€500</span>
+        </li>
+        <li class="catalog-watches-item">
+            <div class="img-wrap">
+                <img class="img-watch-catalog" srcset="/html-css_86_watchmakers/assets/watch6-0221c0e0.jpeg 1x, /html-css_86_watchmakers/assets/watch6-2x-a6c503ea.jpeg 2x" src="/html-css_86_watchmakers/assets/watch6-0221c0e0.jpeg" alt="watch Malawi" width="276" height="274">
+                <svg class="heart-icon" width="20" height="20">
+                    <use href="/html-css_86_watchmakers/assets/icons-bb8b8ce1.svg#heart"></use>
+                </svg>
+                <div class="img-text-wrap">
+                    <h3 class="cards-title">Description</h3>
+                    <p class="cards-text">Richly detailed with an understated design - the Police Men’s Greenlane watch.</p>
+                    <h3 class="cards-title">DETAILS & FEATUREStion</h3>
+                    <pre class="cards-text">Gender: man
+Size: 46x54.5mm
+Case Colour: Steel
+Band Material: Metal
+Case Material: Metal
+Features: Multifunction
+Water Resistant: 5 (ATM)
+Band Colour: Steel</pre>
+                </div>    
+            </div>
+            <p class="description-watch">Malawi Watch Police For Men</p>
+            <span class="price-watch">€555</span>
+        </li>
+        <li class="catalog-watches-item">
+            <div class="img-wrap">
+                <img class="img-watch-catalog" srcset="/html-css_86_watchmakers/assets/watch7-ed13ee2e.jpeg 1x, /html-css_86_watchmakers/assets/watch7-2x-4b46b351.jpeg 2x" src="/html-css_86_watchmakers/assets/watch7-ed13ee2e.jpeg" alt="watch Chronometer" width="276" height="274">
+                <svg class="heart-icon" width="20" height="20">
+                    <use href="/html-css_86_watchmakers/assets/icons-bb8b8ce1.svg#heart"></use>
+                </svg>
+                <div class="img-text-wrap">
+                    <h3 class="cards-title">Description</h3>
+                    <p class="cards-text">Richly detailed with an understated design - the Police Men’s Greenlane watch.</p>
+                    <h3 class="cards-title">DETAILS & FEATUREStion</h3>
+                    <pre class="cards-text">Gender: man
+Size: 46x54.5mm
+Case Colour: Steel
+Band Material: Metal
+Case Material: Metal
+Features: Multifunction
+Water Resistant: 5 (ATM)
+Band Colour: Steel</pre>
+                </div> 
+            </div>
+            <p class="description-watch">Diver 300M Co-Axial Master Chronometer </p>
+            <span class="price-watch">€1200</span>
+        </li>
+        <li class="catalog-watches-item">
+            <div class="img-wrap">
+                <img class="img-watch-catalog" srcset="/html-css_86_watchmakers/assets/watch8-e5e5b7ec.jpeg 1x, /html-css_86_watchmakers/assets/watch8-2x-6e3d14b4.jpeg 2x" src="/html-css_86_watchmakers/assets/watch8-e5e5b7ec.jpeg" alt="watch GreenLane" width="276" height="274">
+                <svg class="heart-icon" width="20" height="20">
+                    <use href="/html-css_86_watchmakers/assets/icons-bb8b8ce1.svg#heart"></use>
+                </svg>
+                <div class="img-text-wrap">
+                    <h3 class="cards-title">Description</h3>
+                    <p class="cards-text">Richly detailed with an understated design - the Police Men’s Greenlane watch.</p>
+                    <h3 class="cards-title">DETAILS & FEATUREStion</h3>
+                    <pre class="cards-text">Gender: man
+Size: 46x54.5mm
+Case Colour: Steel
+Band Material: Metal
+Case Material: Metal
+Features: Multifunction
+Water Resistant: 5 (ATM)
+Band Colour: Steel</pre>
+                </div> 
+            </div>
+            <p class="description-watch">Greenlane Watch By Police For Men</p>
+            <span class="price-watch">€1000</span>
+        </li>
+        <li class="catalog-watches-item">
+            <div class="img-wrap">
+                <img class="img-watch-catalog" srcset="/html-css_86_watchmakers/assets/watch9-e0a3189b.jpeg 1x, /html-css_86_watchmakers/assets/watch9-2x-a94ef5b3.jpeg 2x" src="/html-css_86_watchmakers/assets/watch9-e0a3189b.jpeg" alt="watch Squadrc" width="276" height="274">
+                <svg class="heart-icon" width="20" height="20">
+                    <use href="/html-css_86_watchmakers/assets/icons-bb8b8ce1.svg#heart"></use>
+                </svg>
+                <div class="img-text-wrap">
+                    <h3 class="cards-title">Description</h3>
+                    <p class="cards-text">Richly detailed with an understated design - the Police Men’s Greenlane watch.</p>
+                    <h3 class="cards-title">DETAILS & FEATUREStion</h3>
+                    <pre class="cards-text">Gender: man
+Size: 46x54.5mm
+Case Colour: Steel
+Band Material: Metal
+Case Material: Metal
+Features: Multifunction
+Water Resistant: 5 (ATM)
+Band Colour: Steel</pre>
+                </div> 
+            </div>
+            <p class="description-watch">Squardrc 5402 Chrono</p>
+            <span class="price-watch">€359</span>
+        </li>
+        <li class="catalog-watches-item">
+            <div class="img-wrap">
+                <img class="img-watch-catalog" srcset="/html-css_86_watchmakers/assets/watch10-e6e39362.jpeg 1x, /html-css_86_watchmakers/assets/watch10-2x-5b983ed1.jpeg 2x" src="/html-css_86_watchmakers/assets/watch10-e6e39362.jpeg" alt="watch Chronograph" width="276" height="274">
+                <svg class="heart-icon" width="20" height="20">
+                    <use href="/html-css_86_watchmakers/assets/icons-bb8b8ce1.svg#heart"></use>
+                </svg>
+                <div class="img-text-wrap">
+                    <h3 class="cards-title">Description</h3>
+                    <p class="cards-text">Richly detailed with an understated design - the Police Men’s Greenlane watch.</p>
+                    <h3 class="cards-title">DETAILS & FEATUREStion</h3>
+                    <pre class="cards-text">Gender: man
+Size: 46x54.5mm
+Case Colour: Steel
+Band Material: Metal
+Case Material: Metal
+Features: Multifunction
+Water Resistant: 5 (ATM)
+Band Colour: Steel</pre>
+                </div> 
+            </div>
+            <p class="description-watch">Diver  300M Co‑Axial Master Chronometer Chronograph</p>
+            <span class="price-watch">€400</span>
+        </li>
+        <li class="catalog-watches-item">
+            <div class="img-wrap">
+                <img class="img-watch-catalog" srcset="/html-css_86_watchmakers/assets/watch11-185dfc40.jpeg 1x, /html-css_86_watchmakers/assets/watch11-2x-464b194a.jpeg 2x" src="/html-css_86_watchmakers/assets/watch11-185dfc40.jpeg" alt="watch Citizen" width="276" height="274">
+                <svg class="heart-icon" width="20" height="20">
+                    <use href="/html-css_86_watchmakers/assets/icons-bb8b8ce1.svg#heart"></use>
+                </svg>
+                <div class="img-text-wrap">
+                    <h3 class="cards-title">Description</h3>
+                    <p class="cards-text">Richly detailed with an understated design - the Police Men’s Greenlane watch.</p>
+                    <h3 class="cards-title">DETAILS & FEATUREStion</h3>
+                    <pre class="cards-text">Gender: man
+Size: 46x54.5mm
+Case Colour: Steel
+Band Material: Metal
+Case Material: Metal
+Features: Multifunction
+Water Resistant: 5 (ATM)
+Band Colour: Steel</pre>
+                </div> 
+            </div>
+            <p class="description-watch">Citizen</p>
+            <span class="price-watch">€519</span>
+        </li>
+        <li class="catalog-watches-item">
+            <div class="img-wrap">
+                <img class="img-watch-catalog" srcset="/html-css_86_watchmakers/assets/watch12-acc72192.jpeg 1x, /html-css_86_watchmakers/assets/watch12-2x-8b64c4ac.jpeg 2x" src="/html-css_86_watchmakers/assets/watch12-acc72192.jpeg" alt="watch Armani" width="276" height="274">
+                <svg class="heart-icon" width="20" height="20">
+                    <use href="/html-css_86_watchmakers/assets/icons-bb8b8ce1.svg#heart"></use>
+                </svg>
+                <div class="img-text-wrap">
+                    <h3 class="cards-title">Description</h3>
+                    <p class="cards-text">Richly detailed with an understated design - the Police Men’s Greenlane watch.</p>
+                    <h3 class="cards-title">DETAILS & FEATUREStion</h3>
+                    <pre class="cards-text">Gender: man
+Size: 46x54.5mm
+Case Colour: Steel
+Band Material: Metal
+Case Material: Metal
+Features: Multifunction
+Water Resistant: 5 (ATM)
+Band Colour: Steel</pre>
+                </div> 
+            </div>
+            <p class="description-watch">Armani Exchange</p>
+            <span class="price-watch">€400</span>
+        </li>
+    </ul>
+    <button class="modal-btn modal-btn-open" type="button" data-modal-open>Buy now</button>
+</div>
+</section>
+
+      <section class="new-watch-section project-margin">   
+    <div class="container">
+        <h2 class="new-watch title" >New watches</h2>
+        <h3 class="my-new-watch"> Green And Bronze—The Match Made In Heaven</h3>
+        <ul class="new-watch-list list">
+          <li class="new-watch-item">
+            <picture>
+              <source width="576" height="422"
+              media="(min-width: 1280px)"
+              srcset="/html-css_86_watchmakers/assets/hand-watch-3a31617e.jpg 1x, /html-css_86_watchmakers/assets/hand-watch-x2-4f7304ec.jpg 2x">
+              <source width="342" height="260"
+              media="(min-width: 768px)"
+              srcset="/html-css_86_watchmakers/assets/hand-watch-tablet-d3fa48ee.jpg 1x, /html-css_86_watchmakers/assets/hand-watch-tablet-2x-9905aed0.jpg 2x">
+              <source width="335" height="260"
+              media="(max-width: 767px)"
+              srcset="/html-css_86_watchmakers/assets/hand-watch-3a31617e.jpg , /html-css_86_watchmakers/assets/hand-watch-x2-4f7304ec.jpg 2x">
+              <img srcset="/html-css_86_watchmakers/assets/hand-watch-x2-4f7304ec.jpg 2x" src="/html-css_86_watchmakers/assets/hand-watch-3a31617e.jpg"
+              alt="example banking app" width="576" height="422" />
+            </picture>
+
+            <picture>
+              <source width="576" height="422"
+              media="(min-width: 1280px)"
+              srcset="/html-css_86_watchmakers/assets/watch-4b4c93ec.jpg 1x, /html-css_86_watchmakers/assets/watch-x2-fa0363aa.jpg 2x">
+              <source width="342" height="260"
+              media="(min-width: 768px)"
+              srcset="/html-css_86_watchmakers/assets/watch-tablet-7d098f86.jpg 1x, /html-css_86_watchmakers/assets/watch-tablet-x2-32a3f61b.jpg 2x">
+              <source width="335" height="260"
+              media="(max-width: 767px)"
+              srcset="/html-css_86_watchmakers/assets/watch-telef-7cc974ef.jpg 1x, /html-css_86_watchmakers/assets/watch-telef-x2-52ed176e.jpg 2x">
+              <img 
+              srcset="/html-css_86_watchmakers/assets/watch-x2-fa0363aa.jpg 2x" src="/html-css_86_watchmakers/assets/watch-4b4c93ec.jpg"
+              alt="example banking app" width="576" height="422" />
+            </picture>
+          </li>
+        </ul>
+    </div>
+  </section>
+      <!-- ================Sale Section========== -->
+<section class="sale-section project-margin">
+    <div class="container container-sale">
+        <h2 class="section-name" id="sale" >Sale</h2>
+        <div class="all-content-wrapper">
+            <div class="all-pics-wrapper">
+                <ul class="small-pics-list list">
+                    <li><img class="watch-pic" srcset="/html-css_86_watchmakers/assets/police-watch-90-degree-small@2x-14d209e4.jpeg 2x"
+                            src="data:image/jpeg;base64,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" alt="grate swiss made watches"></li>
+                    <li><img class="watch-pic" srcset="/html-css_86_watchmakers/assets/police-watch-45-degrees@2x-9ca6dc19.jpeg 2x"
+                            src="/html-css_86_watchmakers/assets/police-watch-45-degrees-aae7dd9b.jpeg" alt="grate swiss made watches"></li>
+                    <li><img class="watch-pic" srcset="/html-css_86_watchmakers/assets/police-watch-back-side@2x-2d56bb99.jpeg 2x"
+                            src="data:image/jpeg;base64,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" alt="grate swiss made watches"></li>
+                    <li><img class="watch-pic" srcset="/html-css_86_watchmakers/assets/police-watch-close@2x-78160329.jpeg 2x"
+                            src="/html-css_86_watchmakers/assets/police-watch-close-c5f3e72a.jpeg" alt="grate swiss made watches"></li>
+                </ul>
+                <img class="watch-pic-big" srcset="/html-css_86_watchmakers/assets/police-watch-90-degree@2x-1e426e6a.jpeg 2x"
+                    src="/html-css_86_watchmakers/assets/police-watch-90-degree-f8282609.jpeg" alt="grate swiss made watches">
+            </div>
+            <div class="all-text-wrapper">
+                <h3 class="sale-watches-model">Greenlane Watch By Police For MenHT</h3>
+                <p class="sale-watches-tag">Product tag: PEWJK2227003</p>
+                <div class="prices underline">
+                    <p class="price">€700</p>
+                    <p class="old-price">€1000</p>
+                </div>
+                <div class="decor-wrapper">
+                    <h4 class="watch-description-paragraph">Description</h4>
+                    <svg class="sale-section-decor" width="16px" height="1px">
+                        <use href="/html-css_86_watchmakers/assets/sale-decor-d8947a41.svg"></use>
+                    </svg>
+                </div>
+
+                <p class="watch-desc-detailed underline padding">Richly detailed with an understated design - the
+                    Police
+                    Men’s
+                    Greenlane
+                    watch
+                    features a versatile multifunction design
+                    that fits effortlessly into work and play. The steel case is adorned with a semi-transparent
+                    black
+                    dial.
+                    The
+                    timepiece
+                    exhibits a contrast through a black IP bracelet with matching crown and pushers.</p>
+                <div class="decor-wrapper">
+                    <h4 class="watch-description-paragraph">DETAILS & FEATURESTION</h4>
+                    <svg class="sale-section-decor" width="16px" height="1px">
+                        <use href="/html-css_86_watchmakers/assets/sale-decor-d8947a41.svg"></use>
+                    </svg>
+                </div>
+                <p class="watch-desc-detailed perenos">
+                    Gender: man <br>
+                    Size: 46x54.5mm <br>
+                    Case Colour: Steel <br>
+                    Band Material: Metal <br>
+                    Case Material: Metal <br>
+                    Features: Multifunction <br>
+                    Water Resistant: 5 (ATM) <br>
+                    Band Colour: Steel</p>
+            </div>
+        </div>
+    </div>
+</section>
+      <div class="backdrop is-hidden" data-modal>
+    <div class="modal" >
+        <button class="btn-close" type="button" data-modal-close>
+            <svg class="btn-close-icon" width="10" height="10">
+                <use href="/html-css_86_watchmakers/assets/icons-bb8b8ce1.svg#x"></use>
+            </svg>
+        </button>
+        <div class="modal-img-wrap">
+            <img class="img-watch-modal" srcset="/html-css_86_watchmakers/assets/watch1-90f18f34.jpeg 1x, /html-css_86_watchmakers/assets/watch1-2x-c2e0aa55.jpeg 2x" src="/html-css_86_watchmakers/assets/watch1-90f18f34.jpeg" alt="watch s42" width="276" height="274">
+            <p class="description-watch">Tube Watch S42 Date Steel With Black Case</p>
+            <span class="price-watch">€395</span>
+        </div>
+        <form class="modal-form">
+            <label class="modal-form-label">
+                <span class="label-text">Full name</span>
+                <input class="modal-form-input" type="text" name="user-name" pattern="[A-z]{1,15}" placeholder="Enter your full name" required>
+            </label>
+            <label class="modal-form-label">
+                <span class="label-text">Email</span>
+                <input class="modal-form-input" type="text" name="user-email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" placeholder="Enter your email" required>
+            </label>
+            <label class="modal-form-label">
+                <span class="label-text">Card number</span>
+                <input class="modal-form-input" type="text" name="user-card" pattern="[0-9]{16}"  placeholder="Enter card" required>
+            </label>
+            <label class="modal-form-label">
+                <span class="label-text">Comments</span>
+                <textarea class="modal-form-textarea" name="comment-text area" placeholder="Enter your text" ></textarea>
+            </label>
+            <button class="modal-btn modal-btn-submit" type="submit">submit</button>
+            <span class="modal-text-privacy">By clicking on “Submit” button, you agree to our Privacy Policy, and allow Promodo to use this information for marketing purposes.</span>
+        </form>
+    </div>
+</div>
+
+      
+    </main>
+    <footer class="footer">
+  <div class="cont-foot container">
+    <div class="foot-two">
+      <div class="foot-one">
+        <ul class="list list-f-one">
+          <li>
+            <a href="./index.html"
+              ><img class="footer-logo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAATGSURBVHgBzVlLTiNJEI1qGvETYA/skFBxAQR7JMwJZm6Ab0AfAKntOUEzEhsW2H2CnhVbd4sVK3rDDo09AhYIgc3/I3BMPFemSXuq7KqssttPCmVmlZ0Zr+KTP6IegZlTIp9FSiJV9lAWKYi4NOgwCGjlg/CZBhWi3JL66mFRoEGDKLUewgp++ESDAkXCBnVVuvSrASU4Oupt7RLFhEMxIUqUpXApGthn7AXHcSpkiQ8UA+xlHpeiQZNgow1Zp18BIZHh6Kh3eIZEkSJLWFlEDWiTOk1LmM8A9NnfDCZEihwP9YD6P9QvyGBZTgb1gHaGeg32Um2Zk4NfzMROxWGIxHUpU3mzrHMrqQxFROhgl843yC5Fcpvo4HZ82hp/UESEmhDZW0IckpdZkgQH6FIjb4KsUUiEtcg3ikdCW6MdjiHeDwXPz8+pm5ubDYqArhZhb/bOUXR8J0/5Nd2VMd7/LCHj0OvrKz8+PtLDw4MjZe36+npheXk5lFU+dnqpXCpHdiiK/CuSIUNhA443RIMAgcDT0xMIgAwLmdTLy8vv8puvFAIfu7y3TYUV8e+GAqLoD/LItAQ2CLy9vTniRlCaDEtAdDtLIYkExgjbLQgbuLq62jKaf1PbahcWgPK1Wg2/darVKgRtRqmEpb26s7OzGmZMJ4DEEnlZKjKg3Pb2dnVzc/M31ReSBJb607CAuIu2QOPLj4+P09zcnG9fYq1GlyMjI53iBO/WPviQwMDfyBIHBwc0PT2d3t3dhX8TUqhYYAv+L8FL+uvji6OcnZ0N7EsIQKCP20G+YAw/17J2qdvbWzo5OaF0Ok1TU1PNlezd3d0XcaEaXEfKJpmJiYmGsjFQ1LHYQkSskaUYS+mjoyOQ4FQqhTKzv7+fwXOp1y4vL4uKhLaG47ouxUBFJK8bTSIq1VqfNcHfRVmGNbTMzMw0+5MJ7qsOZAQ4XAoWiYGcuTU2LZIjS5cCKpUKYsOBNURY6iCzKoq7eL+ysvJTCPzQZBYXFykGtrRLaTSIKJey3jMju9zf3zesICQcKR1VR6w0+724uMjDvebn52lycpIsUSG/SZq9I86f7O0zfEUyTlWEg3B2dsbHx8d8enrKcC8hxVhuKLTsxSUtlxAjMbDkxy7U6rdQKCxJdjkcGxuj0dFRQqnrMg+wlI5+hiw0NDTUvq76U1whpz5cluz2+0Be92NFBNjb2yuJ0quKiKNKRt0ggHnD7+81eZ5Ghe3OwQAsexaCXnZbazUhPp8X5UumNTSh4eFhvwM3vcLFc7jvuqq7ZIc1SgqSmQ7Pz8/rMkNjz8D1emN32r5NZQ7YiyuxQY6ShBDYQNArAt3gtxe3Qag1X+gYAdjLPjh7gr+3B3SkvkICC8LlMGfCkU4a1R76L900X1FvkI9zsN0R7M072nXYp97+zNa1en+bxfZBGxZl7sflD7+fxJvBnFRwA/27YuB3qwSl3sF1qTYiWU7m65soc4w7ElsiCPor9reILcEMWcL66k2lYpyWJJV6kWq/kyViKcHGCUnMPjsuCMMg1mWosoreqfkdh4ZFcgtCW3DrPbtNbGRpUCDKfOLoqA4UCQ2OdptV5oAt60BAlMtxdyvgN/2dK2zAXswU+f3SFMqXek3gPzu7nwpusOdmAAAAAElFTkSuQmCC" alt="logo"
+            /></a>
+          </li>
+          <li>
+            <a class="footer-tel link footer-title" href="tel:+380(68)443-94-26"
+              >+380 (68) 443-94-26</a
+            >
+          </li>
+          <li class="text-footer item footer-title">
+            <a href="https://goo.gl/maps/3FrXX8XXqM8a9k8k6"
+              >1678 S. Pioneer Road <br />
+              Salt Lake City <br />
+              UT 84104</a
+            >
+          </li>
+        </ul>
+
+        <ul class="list list-f-two s">
+          <li class="item about-list footer-title">
+            <a href="#about_us">About Us</a>
+          </li>
+          <li class="item about-list footer-title">
+            <a href="#catalog">Catalog</a>
+          </li>
+          <li class="item about-list footer-title"><a href="#sale">Sale</a></li>
+        </ul>
+      </div>
+      <ul class="list soc-list soc-foot">
+        <li class="soc">
+          <a
+            class="socials-link"
+            href="https://facebook.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram link"
+          >
+            <svg class="soc-foot" width="28" height="28">
+              <use class="svg-foot" href="/html-css_86_watchmakers/assets/icons-bb8b8ce1.svg#facebook"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="soc">
+          <a
+            class="socials-link"
+            href="https://instagram.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram link"
+          >
+            <svg class="soc-foot" width="28" height="28">
+              <use href="/html-css_86_watchmakers/assets/icons-bb8b8ce1.svg#instagram"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="soc">
+          <a
+            class="socials-link"
+            href="https://youtube.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram link"
+          >
+            <svg class="soc-foot" width="28" height="28">
+              <use href="/html-css_86_watchmakers/assets/icons-bb8b8ce1.svg#youtube"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="list list-footer-down">
+      <p class="link item footer-down footer-down-a">
+        &#xa9; 2022 The Watch Spot. All rights reserved.
+      </p>
+      <div class="list-footer-down-one">
+        <p class="link item footer-down footer-down-p"><a href="./index.html">Privacy Policy</a></p>
+        <p class="link item footer-down footer-down-t"><a href="./index.html">Terms of Service</a></p>
+      </div>
+    </ul>
+  </div>
+</footer>
+
+
+    
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper('.mySwiper', {
+        slidePerView: 1,
+        spaceBetween: 10,
+        loop: true,
+        keyboard: {
+          enabled: true,
+        },
+        navigation: {
+          nextEl: '.button-next',
+          prevEl: '.button-prev',
+        },
+        pagination: {
+          el: '.sviper-pagination',
+          type: 'fraction',
+          renderFraction: function (currentClass, totalClass) {
+            return (
+              '0<span class="' +
+              currentClass +
+              '"></span>' +
+              '<div class="box"></div>' +
+              '0<span class="' +
+              totalClass +
+              '"></span>'
+            );
+          },
+        },
+      });
+
+      var swiper2 = new Swiper('.mySwiper1', {
+        slidePerView: 1,
+        spaceBetween: 10,
+        loop: true,
+        keyboard: {
+          enabled: true,
+        },
+        navigation: {
+          nextEl: '.button-next1',
+          prevEl: '.button-prev1',
+        },
+        pagination: {
+          el: '.sviper-pagination1',
+          type: 'fraction',
+          renderFraction: function (currentClass1, totalClass1) {
+            return (
+              '0<span class="' +
+              currentClass1 +
+              '"></span>' +
+              '<div class="box"></div>' +
+              '0<span class="' +
+              totalClass1 +
+              '"></span>'
+            );
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
