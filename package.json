@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build --base=/watchmakers/",
+    "build": "vite build --base=/html-css_86_watchmakers/",
     "preview": "vite preview"
   },
   "devDependencies": {
